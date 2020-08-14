@@ -1,0 +1,89 @@
+FlexBox:
+
+Al agregar display:flex a un elemento se convierte en un container flexible.
+Lo  que nos permite alinear a cualquiera de sus hijos en comlumnas o filas.
+El valor default es row(filas) pero se puede cambiar utilizando flex-direction.
+--------------------------------------------------------------------------------------
+Align Elements Using the justify-content Property:
+
+Muchas veces los elementos flexibles no llenan el espacio de un container flexible,
+por suerte se puede utilizar la herramienta justify-content para arreglar este problema.
+El mas comun es justify-content: center; que alinea todos los items en el centro
+del container.
+
+Otros valores:
+
+flex-start: Alinea los elementos al principio del container ya sea vertical o horizontalmente.
+
+flex-end: Alinea los elementos al final del container ya sea vertical o horizontalmente.
+
+space-between: Empuja los elementos a ambos lados del container dejando el espacio del medio vacio.
+
+space-around: Similar a space-between pero los elementos no estan al final si no que tienen 
+la mitad de espacio en los costados que la que tienen en el medio.
+
+space-evenly: Distribuye los espacios por igual en los costados y el centro.
+--------------------------------------------------------------------------------------
+Align Elements Using the align-items Property:
+
+Align-items es muy parecido a justify-content pero se utiliza para ordenar los items en la
+cross-axis en lugar de la main-axis. Para las columnas la cross axis es horizontal y para 
+las filas es vertical.
+
+Valores:
+
+flex-start: --
+
+flex-end: --
+
+center: --
+
+stretch: Los elementos hacen el esfuerzo de llenar el container.
+
+baseline: Alinea los elementos en la base.
+--------------------------------------------------------------------------------------
+Use the flex-wrap Property to Wrap a Row or Column:
+
+Flex-wrap se utiiliza para acomodar los items dentro de un flexbox, basicamente es para
+evitar que se presionen los unos a los otros. Cuando nos aplicamos el flex-wrap: wrap;
+los items dependiendo de su tamanio y el temanio del containter, pasaran a una nueva
+fila o columna.
+
+Valores:
+
+wrap: --
+
+nowrap: nowrap.
+
+wrap-reverse: Realiza el wrap al reves.
+--------------------------------------------------------------------------------------
+Use the flex-shrink Property to Shrink Items:
+
+Se utliza cuando el container es mas chico que los elementos combinados. El elemento con
+mayor flex-shrink va a ocupar mas espacio que el resto de los elementos.
+--------------------------------------------------------------------------------------
+Use the flex-grow Property to Expand Items
+
+Es justamente lo contrario a flex-shrink. Cuanto se van a expandir los elementos en caso 
+de que el contenedor se agrande.
+--------------------------------------------------------------------------------------
+Use the flex-basis Property to Set the Initial Size of an Item
+
+Flex-basis indica el tamñao de un elemento al inicializarlo. Utiliza las mismas unidades
+de medidas (px.em,%,etc.)
+--------------------------------------------------------------------------------------
+flex-grow, flex-shrink y flex-basis se pueden utilizar todas juntas en la propiedad flex.
+
+ej.
+
+flex: 1 0 10px
+=
+flex-grow: 1;, flex-shrink: 0;, y flex-basis: 10px;.
+--------------------------------------------------------------------------------------
+La propiedad order indica el orden en el que apareceran los elementos en el flex-box,
+por defecto vienen en el orden en que se encuentran en el HTML. Se pueden utilizar valores
+negativos.
+
+--------------------------------------------------------------------------------------
+Align-self permite alinear los elementos individualmente, ya que las propiedades float,
+clear y vertical-align no sirven con flex-box. Utiliza los mismos valores que align-items.

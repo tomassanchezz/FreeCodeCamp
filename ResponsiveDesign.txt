@@ -1,0 +1,59 @@
+--FreeCodeCamp.org
+
+Responsive Web Design Principles:
+
+Create a Media Query:
+
+Las media queries fueron agregada con CSS3 para poder cambiar los estilos
+de la pagina basandonos en el espacio que tiene el usuario para verla. 
+Con esto nos aseguramos que la pagina se vea bien en cualquier dispositivo.
+
+Sintaxis:
+
+@media (max-width: 100px) { 
+    /* CSS Rules */
+}
+
+En este caso el @media se va a ejecutar cuando el width sea menor o igual 
+a 100px.
+-----------------------------------------------------------------------------
+Make an Image Responsive:
+
+Hacer que una imagen sea responsive es muy simple: 
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+Con esto nos aseguramos que la imagen nunca sea mas grande que el contenedor
+y que la altura se ajuste para no perder el aspect ratio original.
+-----------------------------------------------------------------------------
+Use a Retina Image for Higher Resolution Displays:
+
+Con el uso de los retina display en las ultimas computadoras y celulares, 
+utilizar una imagen que no esta pensada para High-Resolution Displays 
+podria causar que esta se vea pixelada. 
+
+La forma mas facil de arreglar esto es seteando el height y width de la imagen
+a la mitad de la original.
+
+style>
+  img { 
+      height: 250px; 
+      width: 250px; 
+}
+</style>
+<img src="coolPic500x500" alt="A most excellent picture">
+-----------------------------------------------------------------------------
+Make Typography Responsive:
+
+En lugar de usar em o px para el tamanio de los textos se utilizan unidades
+viewport que son unidades relativas a las viewport dimensions de un dispositivo.
+
+vw (viewport width): 10vw would be 10% of the viewport's width.
+vh (viewport height): 3vh would be 3% of the viewport's height.
+vmin (viewport minimum): 70vmin would be 70% of the viewport's smaller dimension 
+(height or width).
+vmax (viewport maximum): 100vmax would be 100% of the viewport's bigger dimension 
+(height or width).

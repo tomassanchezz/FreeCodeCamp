@@ -1,0 +1,81 @@
+En una grid hay un elemento padre y todos los demas se los llama items dentro
+del grid.
+
+display: grid;
+
+Para crear columnas en una grid debemos usar la siguiente sintaxis, se pueden
+agregar tantas columnas como se desea pero aclarando las medidas.
+
+grid-template-columns: px px px ...; 
+
+Lo mismo para las filas.
+
+grid-template-rows: px px px ...;
+
+Tambien se puede utilizar la funcion repeat para crear las columnas o filas.
+
+grid-template-columns: repeat(100, 50px);
+
+grid-template-row: repeat(2, 1fr 50px) 20px;
+=
+grid-template-columns: 1fr 50px 1fr 50px 20px;
+
+Otra funcion que se puede utilizar dentro de estas es minmax. Con esta funcion podemos
+indicar el minimo y el maximo que puede tener una celda en caso de que cambie de tamanio.
+
+Es muy probable que la funcion minmax se combine con la funcion auto-fill, que inserta
+la cantidad de filas y columnas que pueda dentro del container.
+
+Auto-fit es casi identico a auto-fill pero expande las celdas de tal manera que completen
+el width del container, a diferencia del auto-fill que insertaba columnas aunque esten vacias.
+
+Se pueden utilizar tanto unidades relativas como absolutas (px, em, fr, auto, %).
+
+Se utiliza grid-column-gap y grid-row-gap para ajustar los espacios entre columnas y filas.
+
+Grid-gap por otro lado utiliza ambos gaps, como primer argumento el de las filas y como
+segundo argumento el de las columnas. En caso de que tenga un solo argumento lo aplica a ambos.
+
+La propiedad grid-column se utiliza directamente en los elementos e indica de que linea a que
+linea entre las columnas queremos que ocupe un elemento.
+Lo mismo para grid row.
+
+grid-column: 1 / 3;
+grid-row: 1 / 3;
+
+El elemento ocupara de la primera linea a la 3 osea que ocupara las primeras dos columnas.
+
+justify-self se utiliza para alinear los items de manera horizontal dentro de una celda.
+align-self se utiliza para alinear los items de manera vertical dentro de una celda.
+values:
+
+stretch
+start
+center
+end
+
+justify-items y align-items se utilizan dentro del contenedor y alinea todos los elementos
+en lugar de uno por uno.
+
+Se pueden agrupat celdas en distintas areas y darles un nombre con grid-template-areas.
+
+grid-template-areas:
+  "header header header"
+  "advert content content"
+  "footer footer footer";
+
+Notese que las tres areas de la primera fila forman parte del header y las 3 ultimas forman
+parte del footer. En el medio agregamos un advert y su contenido. Con un "." representamos
+una celda vacia.
+
+
+grid-area sirve para ubicar alguno de nuestros elementos en las areas previamente creadas.
+
+grid-area: header;
+
+O tambien para ubicarlos entre lineas especificas.
+
+item1 { grid-area: 1/1/2/4; }
+
+grid-area: horizontal start / vertical start / horizontal end / vertical end;
+
